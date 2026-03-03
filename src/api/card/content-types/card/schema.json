@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jours": {
+      "type": "string"
+    },
+    "ordre": {
+      "type": "integer"
+    },
+    "represente_les_jours_de_la_semaine_actuelle": {
+      "type": "text"
+    },
+    "a_faire": {
+      "type": "date"
+    },
+    "colonne": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::colonne.colonne",
+      "inversedBy": "cards"
+    },
+    "labels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::label.label",
+      "inversedBy": "cards"
+    }
+  }
+}

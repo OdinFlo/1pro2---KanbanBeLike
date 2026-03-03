@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colonnes",
+  "info": {
+    "singularName": "colonne",
+    "pluralName": "colonnes",
+    "displayName": "colonne"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "semaine": {
+      "type": "string"
+    },
+    "ordre": {
+      "type": "integer"
+    },
+    "board": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::board.board",
+      "inversedBy": "colonnes"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::card.card",
+      "mappedBy": "colonne"
+    }
+  }
+}
